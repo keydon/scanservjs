@@ -56,8 +56,9 @@ class Scanimage {
     cmdBuilder.arg('--resolution', params.resolution);
 
     if (['left', 'top', 'width', 'height'].every(s => s in params)) {
-      cmdBuilder.arg('-l', params.left)
-        .arg('-t', params.top)
+      cmdBuilder
+        //.arg('-l', params.left)
+        //.arg('-t', params.top)
         .arg('-x', params.width)
         .arg('-y', params.height);
     }
@@ -68,10 +69,10 @@ class Scanimage {
       cmdBuilder.arg('--depth', params.depth);
     }
     if ('brightness' in params) {
-      cmdBuilder.arg('--brightness', params.brightness);
+      //cmdBuilder.arg('--brightness', params.brightness);
     }
     if ('contrast' in params) {
-      cmdBuilder.arg('--contrast', params.contrast);
+      //cmdBuilder.arg('--contrast', params.contrast);
     }
     if (params.mode === 'Lineart' && params.dynamicLineart === false) {
       cmdBuilder.arg('--disable-dynamic-lineart=yes');
